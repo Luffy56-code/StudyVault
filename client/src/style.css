@@ -1,0 +1,96 @@
+@import 'tailwindcss';
+
+/* Light Theme */
+:root {
+  --background: #faf8ff; /* soft lavender white */
+  --foreground: #1a1333; /* deep royal text */
+  --muted: #7b6fae; /* muted violet */
+
+  --card: #ffffff;
+
+  /* Modern Violet-Pink Accent */
+  --accent: #7c3aed; /* Violet 600 */
+  --accent-hover: #6d28d9; /* Violet 700 */
+  --accent-text: #ffffff;
+
+  --destructive: #fb7185;
+  --destructive-hover: #f43f5e;
+
+  --border: #e4d9ff;
+
+  --font-body: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial;
+  --font-heading: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial;
+}
+
+/* Dark Theme */
+@custom-variant dark (&:where(.dark, .dark *));
+.dark {
+  --background: #0f0b1a; /* deep cosmic purple */
+  --foreground: #f5f3ff; /* soft lavender white */
+  --muted: #a78bfa;
+
+  --card: #1b1533;
+
+  --accent: #a855f7; /* Violet 500 */
+  --accent-hover: #9333ea; /* Violet 600 */
+  --accent-text: #ffffff;
+
+  --destructive: #f87171;
+  --destructive-hover: #ef4444;
+
+  --border: #2f2647;
+}
+
+/* Tailwind Bridge */
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-card: var(--card);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-text: var(--accent-text);
+  --color-destructive: var(--destructive);
+  --color-destructive-hover: var(--destructive-hover);
+  --color-border: var(--border);
+  --font-body: var(--font-body);
+  --font-heading: var(--font-heading);
+}
+
+/* Base */
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body);
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+body::-webkit-scrollbar {
+  display: none;
+}
+
+/* Scrollbars */
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #7b6fae transparent;
+  overflow: auto;
+}
+.custom-scrollbar::-webkit-scrollbar {
+  height: 6px;
+  width: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #7b6fae;
+  border-radius: 3px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #6d5bb5;
+}
+
+
+.recharts-wrapper .recharts-surface:focus {
+  outline: none !important;
+}
