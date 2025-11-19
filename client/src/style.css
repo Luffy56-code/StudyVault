@@ -1,96 +1,149 @@
 @import 'tailwindcss';
 
-/* Light Theme */
+
 :root {
-  --background: #faf8ff; /* soft lavender white */
-  --foreground: #1a1333; /* deep royal text */
-  --muted: #7b6fae; /* muted violet */
+  --background: #f8fffd;
+  --foreground: #0d1612;
+  --muted: #6b8a7a;
 
   --card: #ffffff;
+  --card-foreground: #0d1612;
 
-  /* Modern Violet-Pink Accent */
-  --accent: #7c3aed; /* Violet 600 */
-  --accent-hover: #6d28d9; /* Violet 700 */
+  --accent-500: #2f8f79;
+  --accent-600: #257a66;
+  --accent-50: #f0f9f6;
+
+  --accent: var(--accent-500);
+  --accent-hover: var(--accent-600);
   --accent-text: #ffffff;
 
-  --destructive: #fb7185;
-  --destructive-hover: #f43f5e;
+  --border: #e0efe8;
 
-  --border: #e4d9ff;
-
-  --font-body: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial;
-  --font-heading: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial;
+  --font-body: Inter, system-ui, sans-serif;
+  --font-heading: Inter, system-ui, sans-serif;
 }
 
-/* Dark Theme */
+/* ---------------------------------------
+   DARK THEME
+---------------------------------------- */
 @custom-variant dark (&:where(.dark, .dark *));
 .dark {
-  --background: #0f0b1a; /* deep cosmic purple */
-  --foreground: #f5f3ff; /* soft lavender white */
-  --muted: #a78bfa;
+  --background: #0a120e;
+  --foreground: #ecfdf5;
+  --muted: #8fa89a;
 
-  --card: #1b1533;
+  --card: #111f18;
+  --card-foreground: #ecfdf5;
 
-  --accent: #a855f7; /* Violet 500 */
-  --accent-hover: #9333ea; /* Violet 600 */
-  --accent-text: #ffffff;
+  --accent-500: #2d957c;
+  --accent-600: #34b897;
+  --accent-50: #0a2923;
 
-  --destructive: #f87171;
-  --destructive-hover: #ef4444;
+  --accent: var(--accent-500);
+  --accent-hover: var(--accent-600);
+  --accent-text: #0a120e;
 
-  --border: #2f2647;
+  --border: #1e332a;
 }
 
-/* Tailwind Bridge */
+/* ---------------------------------------
+   TAILWIND BRIDGE
+---------------------------------------- */
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --color-muted: var(--muted);
   --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+
   --color-accent: var(--accent);
   --color-accent-hover: var(--accent-hover);
   --color-accent-text: var(--accent-text);
-  --color-destructive: var(--destructive);
-  --color-destructive-hover: var(--destructive-hover);
+
   --color-border: var(--border);
   --font-body: var(--font-body);
   --font-heading: var(--font-heading);
 }
 
-/* Base */
+/* ---------------------------------------
+   BASE
+---------------------------------------- */
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-body);
+  margin: 0;
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
 body::-webkit-scrollbar {
   display: none;
 }
 
-/* Scrollbars */
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+}
+
+/* ---------------------------------------
+   BUTTONS
+---------------------------------------- */
+.btn-primary {
+  background: var(--accent);
+  color: var(--accent-text);
+  padding: 0.75rem 1.75rem;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  transition: background 0.2s ease;
+}
+
+.btn-primary:hover {
+  background: var(--accent-hover);
+}
+
+.btn-secondary {
+  border: 2px solid var(--accent-50);
+  padding: 0.75rem 1.75rem;
+  border-radius: 0.75rem;
+  font-weight: 600;
+}
+
+.btn-secondary:hover {
+  border-color: var(--accent);
+  background: var(--accent-50);
+}
+
+/* ---------------------------------------
+   CARDS
+---------------------------------------- */
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  padding: 1.5rem;
+}
+
+/* ---------------------------------------
+   SCROLLBARS
+---------------------------------------- */
 .custom-scrollbar {
   scrollbar-width: thin;
-  scrollbar-color: #7b6fae transparent;
-  overflow: auto;
+  scrollbar-color: var(--muted) transparent;
 }
+
 .custom-scrollbar::-webkit-scrollbar {
-  height: 6px;
   width: 6px;
+  height: 6px;
 }
-.custom-scrollbar::-webkit-scrollbar-track {
-  background: transparent;
-}
+
 .custom-scrollbar::-webkit-scrollbar-thumb {
-  background: #7b6fae;
+  background: var(--muted);
   border-radius: 3px;
 }
+
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-  background: #6d5bb5;
-}
-
-
-.recharts-wrapper .recharts-surface:focus {
-  outline: none !important;
+  background: var(--accent);
 }

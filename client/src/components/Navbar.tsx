@@ -86,8 +86,8 @@ const Navbar = () => {
             openDropDownMenu ? "" : "h-full"
           }`}
         >
-          <li className="text-foreground cursor-pointer">How to Use</li>
-          <li className="text-foreground cursor-pointer">Dashboard</li>
+          <li className=" cursor-pointer">How to Use</li>
+          <li className=" cursor-pointer">Dashboard</li>
           <li>
             <button className="bg-accent rounded-md text-accent-text px-4 py-2 hover:text-accent-hover hover:bg-accent-hover">
               Login
