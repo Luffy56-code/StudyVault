@@ -4,3 +4,8 @@ export interface featureCardProp {
     title:string;
     body:string;
 }
+
+export interface faqComponentProps {
+    question:string;
+    answer:string;
+}
